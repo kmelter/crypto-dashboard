@@ -1,6 +1,9 @@
 var searchButton = document.getElementById("searchBtn");
 var inputGlobal = document.getElementById("crypto-search").value;
 
+
+
+
 searchButton.addEventListener("click", function () {
   var input = document.getElementById("crypto-search").value;
   console.log(input);
@@ -44,3 +47,4 @@ function getExchangeRate() {
         "€1 = " + " $" + CAD + "CAD";
     });
 }
+
