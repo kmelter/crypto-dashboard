@@ -67,3 +67,7 @@ header table {
 .searchBox {
   text-align: left;
 }
+
+.body-container {
+  background-color: grey;
+}

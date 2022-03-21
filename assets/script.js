@@ -14,13 +14,15 @@ function getCrypto(input) {
       return response.json();
     })
     .then(function (data) {
+      console.log(data);
       console.log(data.data.priceUsd);
+
+      document.getElementById("cryptoID").innerText =
+        "Symbol: " + data.data.symbol;
+
       document.getElementById("price").innerText =
         input + " cost for today: $" + data.data.priceUsd;
     });
-
-  // document.getElementById("price").innerText =
-  //   input + " cost for today: " + data.data.priceUsd;
 }
 
 function getExchangeRate() {
@@ -32,15 +34,23 @@ function getExchangeRate() {
     .then(function (data) {
       var USD = data.rates.USD;
       var CAD = data.rates.CAD;
+      var AUD = data.rates.AUD;
+      var JPY = data.rates.JPY;
 
       console.log(data);
 
       console.log(USD);
       console.log(CAD);
 
+      document.getElementById("exchangeHeader").innerText =
+        "Euro exchange rate for today: ";
       document.getElementById("cardUSD").innerText =
         "€1 = " + " $" + USD + "USD";
       document.getElementById("cardCAD").innerText =
         "€1 = " + " $" + CAD + "CAD";
+      document.getElementById("cardAUD").innerText =
+        "€1 = " + " $" + AUD + "AUD";
+      document.getElementById("cardJPY").innerText =
+        "€1 = " + " $" + JPY + "JPY";
     });
 }
