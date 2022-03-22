@@ -55,6 +55,16 @@ header table {
   padding-bottom: 100px;
 } */
 
+body {
+  background-color: rgb(48, 47, 47);
+  margin: 15px;
+}
+
+.mui-appbar {
+  background-color: darkseagreen;
+  border-radius: 15px;
+}
+
 .subheader {
   padding-left: 10px;
   padding-top: 10px;
@@ -64,6 +74,19 @@ header table {
 .exchangeRateCard {
   /* border: 1px black solid; */
 /* } */
+
 .searchBox {
-  text-align: left;
+  text-align: center;
+  align-items: center;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.searchBox input {
+  width: 85%;
+}
+
+.searchBox button {
+  width: 100%;
+  background-color:darkseagreen
 }

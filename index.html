@@ -15,7 +15,7 @@
     <div class="mui-container">
       <table>
         <tr class="mui--appbar-height">
-          <td class="mui--text-title">Crypto Dashboard</td>
+          <td class="mui--text-display1 mui--text-center">Crypto Dashboard</td>
           <!-- <td align="mui--text-right">
             <ul class="mui-list--inline mui--text-body2">
               <li><a href="#">About</a></li>
@@ -27,25 +27,31 @@
       </table>
     </div>
   </header>
+  <br>
+  <br>
   <div id="content-wrapper" class="mui--text-center">
-    <div class="mui--appbar-height mui--text-left subheader">This app will allow users to select a cryptocurrency of
-      their choice
-      and view it's
-      current price.</div>
-    <div class="mui--text-subhead mui-col-md-3 searchBox">
-      Search cryptocurrency:
-
-
+    <div class="mui--text-subhead mui-col-md-3 mui-container mui--z3 mui--divider-right searchBox"
+    style="background-color:#444; margin: 10px;">
+      <div class="mui--text-display1 mui--text-light">Search cryptocurrency:</div>
+      <br>
       <input type="text" class="form-control" id="crypto-search">
-      <button onclick="getExchangeRate()" class="mui-btn mui-btn--raised mui-btn--primary searchBtn"
+      <button onclick="getExchangeRate()" class="mui-btn mui-btn--large mui-btn--raised mui-btn--danger" searchBtn"
         id="searchBtn">Search</button>
     </div>
 
-    <div class="mui-col-md-4 cryptoPriceCard" id="cryptoCard">
-      <div class="crypto-card" id="price"></div>
+
+    <div class="mui-col-md-4 mui-container mui--z3 mui--divider-right cryptoPriceCard " id="cryptoCard"
+      style="border-radius: 15px; background-color:#444; margin: 10px">
+      <div class="crypto-card mui--text-light mui--text-display1 mui--align-top" id="id"></div>
+      <div class="crypto-card mui--text-light-secondary mui--text-title mui--text-left " id="symbol"></div>
+      <div class="crypto-card mui--text-light-secondary mui--text-subhead mui--align-middle mui--text-right" id="rank"></div>
+      <div class="crypto-card mui--text-light-secondary mui--text-center mui--text-title" id="price"></div>
     </div>
 
-    <div class="mui-col-md-4 exchangeRateCard" id="exchangeCard">
+
+    <div class="mui-col-md-4 mui-container mui--z3 mui--divider-right exchangeRateCard" id="exchangeCard"
+    style="border-radius: 15px; background-color:#444; margin: 10px;">
+    <div class="mui--text-display1 mui--text-light">Exchange Rates</div>
       <div class="USD" id="cardUSD"></div>
       <div class="CAD" id="cardCAD"></div>
     </div>

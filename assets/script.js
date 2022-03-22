@@ -15,8 +15,16 @@ function getCrypto(input) {
     })
     .then(function (data) {
       console.log(data.data.priceUsd);
+      document.getElementById("id").innerText =
+      "" + data.data.id;
       document.getElementById("price").innerText =
         input + " cost for today: $" + data.data.priceUsd;
+        console.log(data.data.symbol);
+        document.getElementById("symbol").innerText =
+        " symbol: " + data.data.symbol;
+        console.log(data.data.rank);
+        document.getElementById("rank").innerText =
+        " rank: " + data.data.rank;
     });
 
   // document.getElementById("price").innerText =
