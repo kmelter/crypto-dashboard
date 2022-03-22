@@ -1,5 +1,4 @@
 var searchButton = document.getElementById("searchBtn");
-var inputGlobal = document.getElementById("crypto-search").value;
 
 searchButton.addEventListener("click", function () {
   var input = document.getElementById("crypto-search").value;
@@ -16,14 +15,15 @@ function getCrypto(input) {
     .then(function (data) {
       console.log(data);
       console.log(data.data.priceUsd);
-      // var cost = data.data.priceUsd;
-      // let roundedCost = cost.toFixed(2);
 
       document.getElementById("cryptoID").innerText =
         "Symbol: " + data.data.symbol;
 
       document.getElementById("price").innerText =
         input + " cost for today: $" + data.data.priceUsd;
+
+      document.getElementById("change").innerText =
+        "Change today: " + data.data.changePercent24Hr + "%";
     });
 }
 
@@ -44,7 +44,6 @@ function getExchangeRate() {
       let roundedJPY = JPY.toFixed(2);
 
       console.log(data);
-
       console.log(USD);
       console.log(CAD);
 
