@@ -34,7 +34,7 @@ function getCrypto(input) {
 }
 
 function getExchangeRate() {
-  var requestUrl = `http://api.exchangeratesapi.io/v1/latest?access_key=947025021f02a3444dcee081b8b43f73`;
+  var requestUrl = `https://api.exchangeratesapi.io/v1/latest?access_key=947025021f02a3444dcee081b8b43f73`;
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
