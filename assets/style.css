@@ -65,6 +65,10 @@ body {
   border-radius: 15px;
 }
 
+.mui--text-accent {
+  color: rgba(143, 188, 143, 0.589);
+}
+
 .subheader {
   padding-left: 10px;
   padding-top: 10px;
@@ -77,7 +81,6 @@ body {
 
 .searchBox {
   text-align: center;
-  align-items: center;
   border-radius: 15px;
   padding: 20px;
 }
@@ -89,4 +92,10 @@ body {
 .searchBox button {
   width: 100%;
   background-color:darkseagreen
+}
+
+.cryptoPriceCard, .exchangeRateCard {
+  text-align: center;
+  border-radius: 15px;
+  padding: 20px;
 }

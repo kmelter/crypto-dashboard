@@ -1,5 +1,4 @@
 var searchButton = document.getElementById("searchBtn");
-var inputGlobal = document.getElementById("crypto-search").value;
 
 searchButton.addEventListener("click", function () {
   var input = document.getElementById("crypto-search").value;
@@ -14,21 +13,24 @@ function getCrypto(input) {
       return response.json();
     })
     .then(function (data) {
+      console.log(data);
       console.log(data.data.priceUsd);
-      document.getElementById("id").innerText =
-      "" + data.data.id;
+
+      var currentCost = Math.abs(data.data.priceUsd);
+      console.log(currentCost, typeof currentCost);
+
+      let roundedCost = currentCost.toFixed(2);
+      console.log(roundedCost);
+
+      document.getElementById("cryptoID").innerText =
+        "Symbol: " + data.data.symbol;
+
       document.getElementById("price").innerText =
         input + " cost for today: $" + data.data.priceUsd;
-        console.log(data.data.symbol);
-        document.getElementById("symbol").innerText =
-        " symbol: " + data.data.symbol;
-        console.log(data.data.rank);
-        document.getElementById("rank").innerText =
-        " rank: " + data.data.rank;
-    });
 
-  // document.getElementById("price").innerText =
-  //   input + " cost for today: " + data.data.priceUsd;
+      document.getElementById("change").innerText =
+        "Change today: " + data.data.changePercent24Hr + "%";
+    });
 }
 
 function getExchangeRate() {
@@ -39,16 +41,45 @@ function getExchangeRate() {
     })
     .then(function (data) {
       var USD = data.rates.USD;
+      let roundedUSD = USD.toFixed(2);
       var CAD = data.rates.CAD;
+      let roundedCAD = CAD.toFixed(2);
+      var AUD = data.rates.AUD;
+      let roundedAUD = AUD.toFixed(2);
+      var JPY = data.rates.JPY;
+      let roundedJPY = JPY.toFixed(2);
 
       console.log(data);
-
       console.log(USD);
       console.log(CAD);
 
+      document.getElementById("exchangeHeader").innerText =
+        "Euro exchange rate for today: ";
       document.getElementById("cardUSD").innerText =
-        "€1 = " + " $" + USD + "USD";
+        "€1 = " + " $" + roundedUSD + " USD";
       document.getElementById("cardCAD").innerText =
-        "€1 = " + " $" + CAD + "CAD";
+        "€1 = " + " $" + roundedCAD + " CAD";
+      document.getElementById("cardAUD").innerText =
+        "€1 = " + " $" + roundedAUD + " AUD";
+      document.getElementById("cardJPY").innerText =
+        "€1 = " + " $" + roundedJPY + " JPY";
     });
 }
+
+$(function () {
+  var availableTags = [];
+  $("#crypto-search").autocomplete({
+    source: availableTags,
+  });
+  var requestURLtest = `https://api.coincap.io/v2/assets`;
+  fetch(requestURLtest)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      for (i = 0; i < 100; i++) {
+        availableTags.push(data.data[i].id);
+      }
+    });
+});
