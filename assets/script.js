@@ -66,20 +66,4 @@ function getExchangeRate() {
     });
 }
 
-// $(function () {
-//   var availableTags = [];
-//   $("#crypto-search").autocomplete({
-//     source: availableTags,
-//   });
-//   var requestURLtest = `https://api.coincap.io/v2/assets`;
-//   fetch(requestURLtest)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data);
-//       for (i = 0; i < 100; i++) {
-//         availableTags.push(data.data[i].id);
-//       }
-//     });
-// });
+
