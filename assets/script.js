@@ -34,7 +34,7 @@ function getCrypto(input) {
 }
 
 function getExchangeRate() {
-  var requestUrl = `http://api.exchangeratesapi.io/v1/latest?access_key=947025021f02a3444dcee081b8b43f73`;
+  var requestUrl = `https://api.exchangeratesapi.io/v1/latest?access_key=947025021f02a3444dcee081b8b43f73`;
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
@@ -66,20 +66,20 @@ function getExchangeRate() {
     });
 }
 
-$(function () {
-  var availableTags = [];
-  $("#crypto-search").autocomplete({
-    source: availableTags,
-  });
-  var requestURLtest = `https://api.coincap.io/v2/assets`;
-  fetch(requestURLtest)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      for (i = 0; i < 100; i++) {
-        availableTags.push(data.data[i].id);
-      }
-    });
-});
+// $(function () {
+//   var availableTags = [];
+//   $("#crypto-search").autocomplete({
+//     source: availableTags,
+//   });
+//   var requestURLtest = `https://api.coincap.io/v2/assets`;
+//   fetch(requestURLtest)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       console.log(data);
+//       for (i = 0; i < 100; i++) {
+//         availableTags.push(data.data[i].id);
+//       }
+//     });
+// });
