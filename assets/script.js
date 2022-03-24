@@ -22,14 +22,17 @@ function getCrypto(input) {
       let roundedCost = currentCost.toFixed(2);
       console.log(roundedCost);
 
+      var currentChange = Math.abs(data.data.changePercent24Hr);
+      let roundedChange = currentChange.toFixed(2);
+
       document.getElementById("cryptoID").innerText =
         "Symbol: " + data.data.symbol;
 
       document.getElementById("price").innerText =
-        input + " cost for today: $" + data.data.priceUsd;
+        input + " cost for today: $" + roundedCost;
 
       document.getElementById("change").innerText =
-        "Change today: " + data.data.changePercent24Hr + "%";
+        "Change today: " + roundedChange + "%";
     });
 }
 
@@ -62,8 +65,24 @@ function getExchangeRate() {
       document.getElementById("cardAUD").innerText =
         "€1 = " + " $" + roundedAUD + " AUD";
       document.getElementById("cardJPY").innerText =
-        "€1 = " + " $" + roundedJPY + " JPY";
+        "€1 = " + " ¥" + roundedJPY + " JPY";
     });
 }
 
-
+// $(function () {
+//   var availableTags = [];
+//   $("#crypto-search").autocomplete({
+//     source: availableTags,
+//   });
+//   var requestURLtest = `https://api.coincap.io/v2/assets`;
+//   fetch(requestURLtest)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       console.log(data);
+//       for (i = 0; i < 100; i++) {
+//         availableTags.push(data.data[i].id);
+//       }
+//     });
+// });
